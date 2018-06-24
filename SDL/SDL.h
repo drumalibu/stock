@@ -16,12 +16,12 @@ namespace SDL_Frame
         static const Uint32 INIT_TIMER            = SDL_INIT_TIMER;
         static const Uint32 INIT_AUDIO            = SDL_INIT_AUDIO;
         static const Uint32 INIT_VIDEO            = SDL_INIT_VIDEO;
-        static const Uint32 INIT_JOYSTICK         = 4;
-        static const Uint32 INIT_HAPTIC           = 5;
-        static const Uint32 INIT_GAMECONTROLLER   = 6;
-        static const Uint32 INIT_EVENTS           = 7;
+        static const Uint32 INIT_JOYSTICK         = SDL_INIT_JOYSTICK;
+        static const Uint32 INIT_HAPTIC           = SDL_INIT_HAPTIC;
+        static const Uint32 INIT_GAMECONTROLLER   = SDL_INIT_GAMECONTROLLER;
+        static const Uint32 INIT_EVENTS           = SDL_INIT_EVENTS;
         static const Uint32 INIT_EVERYTHING       = SDL_INIT_EVERYTHING;
-        static const Uint32 INIT_NOPARACHUTE      = 9;
+        static const Uint32 INIT_NOPARACHUTE      = SDL_INIT_NOPARACHUTE;
 
         SDL(Uint32 InitFlag);
         int init(Uint32 InitFlag);
