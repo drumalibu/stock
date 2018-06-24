@@ -5,6 +5,7 @@
 #ifndef STOCK_SDL_H
 #define STOCK_SDL_H
 
+#include <iostream>
 #include "SDL2/SDL.h"
 
 namespace SDL_Frame
@@ -12,15 +13,15 @@ namespace SDL_Frame
     class SDL
     {
     public:
-        //static const uint32_t INIT_TIMER            = 1;
-        //static const uint32_t INIT_AUDIO            = 2;
-        //static const uint32_t INIT_VIDEO            = 3;
-        //static const uint32_t INIT_JOYSTICK         = 4;
-        //static const uint32_t INIT_HAPTIC           = 5;
-        //static const uint32_t INIT_GAMECONTROLLER   = 6;
-        //static const uint32_t INIT_EVENTS           = 7;
-        //static const uint32_t INIT_EVERYTHING       = 8;
-        //static const uint32_t INIT_NOPARACHUTE      = 9;
+        static const Uint32 INIT_TIMER            = SDL_INIT_TIMER;
+        static const Uint32 INIT_AUDIO            = SDL_INIT_AUDIO;
+        static const Uint32 INIT_VIDEO            = SDL_INIT_VIDEO;
+        static const Uint32 INIT_JOYSTICK         = 4;
+        static const Uint32 INIT_HAPTIC           = 5;
+        static const Uint32 INIT_GAMECONTROLLER   = 6;
+        static const Uint32 INIT_EVENTS           = 7;
+        static const Uint32 INIT_EVERYTHING       = SDL_INIT_EVERYTHING;
+        static const Uint32 INIT_NOPARACHUTE      = 9;
 
         SDL(Uint32 InitFlag);
         int init(Uint32 InitFlag);
