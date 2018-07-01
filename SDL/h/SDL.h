@@ -6,13 +6,16 @@
 #define STOCK_SDL_H
 
 #include <iostream>
-#include "SDL2/SDL.h"
+#include "AbstractEntity.h"
 
-namespace SDL_Frame
+namespace SDL
 {
-    class SDL
+    template <class T>
+
+    class SDL : public AbstractEntity
     {
     public:
+        // Init Flags
         static const Uint32 INIT_TIMER            = SDL_INIT_TIMER;
         static const Uint32 INIT_AUDIO            = SDL_INIT_AUDIO;
         static const Uint32 INIT_VIDEO            = SDL_INIT_VIDEO;
@@ -23,20 +26,10 @@ namespace SDL_Frame
         static const Uint32 INIT_EVERYTHING       = SDL_INIT_EVERYTHING;
         static const Uint32 INIT_NOPARACHUTE      = SDL_INIT_NOPARACHUTE;
 
-        SDL(Uint32 InitFlag);
+        explicit SDL(Uint32 InitFlag = SDL::INIT_EVERYTHING);
         int init(Uint32 InitFlag);
 
-        SDL_Window* createWindow(const char* title, int x, int y, int width, int height, Uint32 WinFlag);
-
-        //SDL_Renderer
-
-        SDL_Surface bmp();
-        int texture();
-        void clean();
-
-    protected:
-        //static const char*
-        void getError();
+        //void clean();
     };
 }
 

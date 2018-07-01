@@ -3,14 +3,19 @@ project(stock)
 
 set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_EXE main.cpp)
+set(LIBS AbstractEntity SDL Window Renderer Surface Texture)
 
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 
-include_directories(SDL)
-
-set(SOURCE_LIB SDL/SDL.cpp)
-add_library(SDL STATIC ${SOURCE_LIB})
-
 add_executable(main ${SOURCE_EXE})
-target_link_libraries(main ${SDL2_LIBRARIES} SDL)
+target_link_libraries(main ${SDL2_LIBRARIES} ${LIBS})
+
+include_directories(SDL SDL/h)
+
+add_library(AbstractEntity STATIC SDL/AbstractEntity.cpp SDL/h/AbstractEntity.h)
+add_library(SDL STATIC SDL/SDL.cpp SDL/h/SDL.h)
+add_library(Window STATIC SDL/Window.cpp SDL/h/Window.h)
+add_library(Renderer STATIC SDL/Renderer.cpp SDL/h/Renderer.h)
+add_library(Surface STATIC SDL/Surface.cpp SDL/h/Surface.h)
+add_library(Texture STATIC SDL/Texture.cpp SDL/h/Texture.h)
