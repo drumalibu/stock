@@ -17,7 +17,7 @@ namespace SDL
         static const Uint32 PRESENTVSYNC = SDL_RENDERER_PRESENTVSYNC;
         static const Uint32 TARGETTEXTURE = SDL_RENDERER_TARGETTEXTURE;
 
-        Renderer(SDL_Window* window, int index = nullptr, Uint32 flags = nullptr);
+        Renderer(SDL_Window* window, int index, Uint32 flags);
 
         SDL_Renderer* get(SDL_Surface* surface = nullptr);
         int getNumDriver();

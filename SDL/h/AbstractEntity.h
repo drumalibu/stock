@@ -10,11 +10,10 @@
 
 namespace SDL
 {
-    template <class T>
-
     class AbstractEntity
     {
     protected:
+        template <class T>
         void checkError(T obj);
         void printError();
     };

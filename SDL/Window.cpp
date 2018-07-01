@@ -7,11 +7,11 @@
 namespace SDL
 {
     Window::Window(const char* title,
-                   int x = nullptr,
-                   int y = nullptr,
-                   int width = nullptr,
-                   int height = nullptr,
-                   Uint32 flags = nullptr)
+                   int x = 0,
+                   int y = 0,
+                   int width = 0,
+                   int height = 0,
+                   Uint32 flags = Window::RESIZABLE)
     {
         this->setTitle(title);
         this->setPosition(x, y);

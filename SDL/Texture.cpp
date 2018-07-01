@@ -2,11 +2,16 @@
 // Created by andrew on 01.07.18.
 //
 
-#include <h/Texture.h>
+#include "h/Texture.h"
 
 namespace SDL
 {
-    Texture::Texture(SDL_Renderer *renderer, Uint32 format, int access, int w, int h)
+    Texture::Texture(
+            SDL_Renderer *renderer,
+            Uint32 format = Texture::PIXEL_UNKNOWN,
+            int access = Texture::ACCESS_STATIC,
+            int w = 0,
+            int h = 0)
     {
         this->renderer = renderer;
         this->format = format;

@@ -6,14 +6,14 @@
 
 namespace SDL
 {
-    Renderer::Renderer(SDL_Window *window, int index = nullptr, Uint32 flags = nullptr)
+    Renderer::Renderer(SDL_Window *window, int index = -1, Uint32 flags = Renderer::ACCELERATED)
     {
         this->window    = window;
         this->index     = index ? index : this->getNumDriver();
         this->flags     = flags;
     }
 
-    SDL_Renderer* Renderer::get(SDL_Surface* surface = nullptr)
+    SDL_Renderer* Renderer::get(SDL_Surface* surface)
     {
         SDL_Renderer* renderer;
         if (surface) {

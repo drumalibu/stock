@@ -10,8 +10,6 @@
 
 namespace SDL
 {
-    template <class T>
-
     class SDL : public AbstractEntity
     {
     public:
@@ -26,7 +24,8 @@ namespace SDL
         static const Uint32 INIT_EVERYTHING       = SDL_INIT_EVERYTHING;
         static const Uint32 INIT_NOPARACHUTE      = SDL_INIT_NOPARACHUTE;
 
-        explicit SDL(Uint32 InitFlag = SDL::INIT_EVERYTHING);
+        SDL() = default;
+        explicit SDL(Uint32 InitFlag);
         int init(Uint32 InitFlag);
 
         //void clean();

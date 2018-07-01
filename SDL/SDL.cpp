@@ -20,20 +20,4 @@ namespace SDL
 
         return 0;
     }
-
-    SDL_Texture* SDL::texture(SDL_Renderer* renderer, SDL_Surface* surface, bool memFree)
-    {
-        SDL_Texture *tex = SDL_CreateTextureFromSurface(renderer, surface);
-
-        if (memFree) {
-            SDL_FreeSurface(surface);
-        }
-
-        if (tex == nullptr){
-            this->checkError(tex);
-            exit(1);
-        }
-
-        return tex;
-    }
 }

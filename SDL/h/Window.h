@@ -5,7 +5,7 @@
 #ifndef STOCK_WINDOW_H
 #define STOCK_WINDOW_H
 
-#include "SDL.h"
+#include "AbstractEntity.h"
 
 namespace SDL
 {
@@ -24,11 +24,11 @@ namespace SDL
         Window() = default;
         explicit Window(
                 const char* title,
-                int x = nullptr,
-                int y = nullptr,
-                int width = nullptr,
-                int height = nullptr,
-                Uint32 flags = nullptr
+                int x,
+                int y,
+                int width,
+                int height,
+                Uint32 flags
         );
 
         SDL_Window* get();
