@@ -5,8 +5,7 @@
 #ifndef STOCK_ABSTRACTENTITY_H
 #define STOCK_ABSTRACTENTITY_H
 
-#include <iostream>
-#include "SDL2/SDL.h"
+#include <SDL2/SDL.h>
 
 namespace SDL
 {
@@ -14,7 +13,13 @@ namespace SDL
     {
     protected:
         template <class T>
-        void checkError(T obj);
+        void checkError(T obj)
+        {
+            if (obj == nullptr) {
+                this->printError();
+                exit(1);
+            }
+        }
         void printError();
     };
 }

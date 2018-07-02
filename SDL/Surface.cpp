@@ -2,7 +2,7 @@
 // Created by andrew on 01.07.18.
 //
 
-#include <h/Surface.h>
+#include "Surface.h"
 
 namespace SDL
 {
@@ -19,7 +19,7 @@ namespace SDL
                 this->amask
         );
 
-        this->checkError(surface);
+        Surface::checkError(surface);
 
         return surface;
     }
@@ -28,7 +28,7 @@ namespace SDL
     {
         SDL_Surface* surface = SDL_LoadBMP(file.c_str());
         
-        this->checkError(surface);
+        Surface::checkError(surface);
         
         return surface;
     }

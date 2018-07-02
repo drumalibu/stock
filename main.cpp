@@ -1,11 +1,10 @@
-#include "SDL/h/AbstractEntity.h"
-#include "SDL/h/Window.h"
+#include "Window.h"
 
 using namespace SDL;
 
 int main()
 {
-    auto* win = new Window("qwe", 10, 10, 300, 300, Window::RESIZABLE);
+    auto* win = new SDL::Window("qwe", 10, 10, 300, 300, Window::RESIZABLE);
 
     return 0;
 }

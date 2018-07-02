@@ -2,7 +2,7 @@
 // Created by andrew on 25.06.18.
 //
 
-#include "h/Window.h"
+#include "Window.h"
 
 namespace SDL
 {
@@ -22,7 +22,7 @@ namespace SDL
     SDL_Window* Window::get()
     {
         SDL_Window *window = SDL_CreateWindow(this->title, this->x, this->y, this->width, this->height, this->flags);
-        this->checkError(window);
+        Window::checkError(window);
 
         return window;
     }

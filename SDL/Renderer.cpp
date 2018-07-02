@@ -2,7 +2,7 @@
 // Created by andrew on 26.06.18.
 //
 
-#include <h/Renderer.h>
+#include "Renderer.h"
 
 namespace SDL
 {
@@ -22,7 +22,7 @@ namespace SDL
             renderer = SDL_CreateRenderer(this->window, this->index, this->flags);
         }
 
-        this->checkError(renderer);
+        Renderer::checkError(renderer);
 
         return renderer;
     }

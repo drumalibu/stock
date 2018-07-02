@@ -3,19 +3,25 @@ project(stock)
 
 set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_EXE main.cpp)
-set(LIBS AbstractEntity SDL Window Renderer Surface Texture)
+#[[set(LIBS AbstractEntity SDL Window Renderer Surface Texture)]]
+set(SDL2_INCLUDE_DIR usr/include/SDL2)
+set(SDL2_LIBRARY usr/lib/x86_64-linux-gnu/libSDL2.so)
+#[[set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)]]
 
-find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
-
-add_executable(main ${SOURCE_EXE})
-target_link_libraries(main ${SDL2_LIBRARIES} ${LIBS})
-
+include_directories(${SDL2_INCLUDE_DIR})
 include_directories(SDL SDL/h)
+add_executable(main ${SOURCE_EXE})
+#[[include_directories(${SDL2_INCLUDE_DIR})]]
 
-add_library(AbstractEntity STATIC SDL/AbstractEntity.cpp SDL/h/AbstractEntity.h)
+
+#[[target_link_libraries(main ${SDL2_LIBRARY})]]
+target_link_libraries(main ${SDL2_LIBRARY})
+target_link_libraries(main lib)
+
+
+#[[add_library(AbstractEntity STATIC SDL/AbstractEntity.cpp SDL/h/AbstractEntity.h)
 add_library(SDL STATIC SDL/SDL.cpp SDL/h/SDL.h)
 add_library(Window STATIC SDL/Window.cpp SDL/h/Window.h)
 add_library(Renderer STATIC SDL/Renderer.cpp SDL/h/Renderer.h)
 add_library(Surface STATIC SDL/Surface.cpp SDL/h/Surface.h)
-add_library(Texture STATIC SDL/Texture.cpp SDL/h/Texture.h)
+add_library(Texture STATIC SDL/Texture.cpp SDL/h/Texture.h)]]

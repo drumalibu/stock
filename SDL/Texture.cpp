@@ -2,7 +2,7 @@
 // Created by andrew on 01.07.18.
 //
 
-#include "h/Texture.h"
+#include "Texture.h"
 
 namespace SDL
 {
@@ -23,7 +23,7 @@ namespace SDL
     SDL_Texture* Texture::get()
     {
         SDL_Texture* texture = SDL_CreateTexture(this->renderer, this->format, this->access, this->width, this->height);
-        this->checkError(texture);
+        Texture::checkError(texture);
 
         return texture;
     }
@@ -31,11 +31,11 @@ namespace SDL
     SDL_Texture* Texture::get(bool fromSurface)
     {
         if (!this->surface) {
-            this->printError();
+            Texture::printError();
         }
 
         SDL_Texture* texture = SDL_CreateTextureFromSurface(this->renderer, this->surface);
-        this->checkError(texture);
+        Texture::checkError(texture);
 
         return texture;
     }
@@ -43,6 +43,7 @@ namespace SDL
     SDL_Texture* Texture::get(SDL_Surface *surface)
     {
         SDL_Texture* texture = SDL_CreateTextureFromSurface(this->renderer, surface);
+        return texture;
     }
 
     void Texture::setRenderer(SDL_Renderer *renderer)
