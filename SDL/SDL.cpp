@@ -2,7 +2,7 @@
 // Created by andrew on 22.06.18.
 //
 
-#include "SDL.h"
+#include "h/SDL.h"
 
 namespace SDL
 {

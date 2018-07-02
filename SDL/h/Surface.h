@@ -6,6 +6,7 @@
 #define STOCK_SURFACE_H
 
 #include "AbstractEntity.h"
+#include <string>
 
 using namespace std;
 

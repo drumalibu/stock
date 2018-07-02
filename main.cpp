@@ -1,10 +1,23 @@
+#pragma once
 #include "Window.h"
-
-using namespace SDL;
+#include "SDL/h/SDL.h"
 
 int main()
 {
-    auto* win = new SDL::Window("qwe", 10, 10, 300, 300, Window::RESIZABLE);
+    SDL::Window* win;
+    win = new SDL::Window("asdasd",200,300,300,400,SDL::Window::RESIZABLE);
+
+    SDL::SDL sdl(SDL::SDL::INIT_EVERYTHING);
+
+    SDL_Window* window;
+
+    window = win->get();
+
+    SDL_ShowWindow(window);
+
+    SDL_Delay(9000);
+
+    delete win, window;
 
     return 0;
 }

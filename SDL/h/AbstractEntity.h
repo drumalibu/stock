@@ -16,7 +16,7 @@ namespace SDL
         void checkError(T obj)
         {
             if (obj == nullptr) {
-                this->printError();
+                AbstractEntity::printError();
                 exit(1);
             }
         }
