@@ -1,7 +1,7 @@
 project(library)
 
 set(SOURCES AbstractEntity.cpp Renderer.cpp SDL.cpp Surface.cpp Texture.cpp Window.cpp)
-set(HEADERS h/AbstractEntity.h h/Renderer.h h/SDL.h h/Surface.h h/Texture.h h/Window.h)
+set(HEADERS h/SDLFrame.h h/AbstractEntity.h h/Renderer.h h/SDL.h h/Surface.h h/Texture.h h/Window.h)
 
 add_library(lib ${SOURCES} ${HEADERS})
 
