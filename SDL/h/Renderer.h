@@ -7,7 +7,7 @@
 
 #include "AbstractEntity.h"
 
-namespace SDL
+namespace SDL_Frame
 {
     class Renderer : public AbstractEntity
     {

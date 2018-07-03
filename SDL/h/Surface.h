@@ -10,7 +10,7 @@
 
 using namespace std;
 
-namespace SDL
+namespace SDL_Frame
 {
     class Surface : public AbstractEntity
     {

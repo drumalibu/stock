@@ -4,7 +4,7 @@
 
 #include "Texture.h"
 
-namespace SDL
+namespace SDL_Frame
 {
     Texture::Texture(
             SDL_Renderer *renderer,

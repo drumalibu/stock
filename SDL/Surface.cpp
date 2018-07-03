@@ -4,7 +4,7 @@
 
 #include "Surface.h"
 
-namespace SDL
+namespace SDL_Frame
 {
     SDL_Surface* Surface::createRGBA(int width, int height, int depth)
     {

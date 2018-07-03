@@ -7,20 +7,20 @@
 
 #include <SDL2/SDL.h>
 
-namespace SDL
+namespace SDL_Frame
 {
     class AbstractEntity
     {
     protected:
         template <class T>
-        void checkError(T obj)
+        static void checkError(T obj)
         {
             if (obj == nullptr) {
                 AbstractEntity::printError();
                 exit(1);
             }
         }
-        void printError();
+        static void printError();
     };
 }
 

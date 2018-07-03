@@ -4,7 +4,7 @@
 
 #include "Renderer.h"
 
-namespace SDL
+namespace SDL_Frame
 {
     Renderer::Renderer(SDL_Window *window, int index = -1, Uint32 flags = Renderer::ACCELERATED)
     {

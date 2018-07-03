@@ -5,7 +5,7 @@
 #include "AbstractEntity.h"
 #include <iostream>
 
-namespace SDL
+namespace SDL_Frame
 {
     void AbstractEntity::printError()
     {

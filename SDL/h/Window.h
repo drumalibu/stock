@@ -7,7 +7,7 @@
 
 #include "AbstractEntity.h"
 
-namespace SDL
+namespace SDL_Frame
 {
     class Window : public AbstractEntity
     {
@@ -33,14 +33,18 @@ namespace SDL
 
         SDL_Window* get();
         SDL_Window* get(const void* data);
+        void show();
+        void show(SDL_Window* window);
         void destroy(SDL_Window* window);
 
+        void setWindow(SDL_Window* window);
         void setTitle(const char* title);
         void setPosition(int x, int y);
         void setSize(int width, int height);
         void setFlags(Uint32 flags);
 
     private:
+        SDL_Window* window; // Указатель на последнее созданное окно todo сделать статическим
         const char* title = nullptr;
         int x = 0;
         int y = 0;

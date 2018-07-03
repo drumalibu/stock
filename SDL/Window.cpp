@@ -4,14 +4,14 @@
 
 #include "Window.h"
 
-namespace SDL
+namespace SDL_Frame
 {
     Window::Window(const char* title,
-                   int x = 0,
-                   int y = 0,
-                   int width = 0,
-                   int height = 0,
-                   Uint32 flags = Window::RESIZABLE)
+                   int x,
+                   int y,
+                   int width,
+                   int height,
+                   Uint32 flags)
     {
         this->setTitle(title);
         this->setPosition(x, y);
@@ -35,6 +35,25 @@ namespace SDL
     void Window::destroy(SDL_Window* window)
     {
         SDL_DestroyWindow(window);
+    }
+
+    void Window::show()
+    {
+        if (!this->window) {
+            return;
+        }
+
+        Window::show(this->window);
+    }
+
+    void Window::show(SDL_Window* window)
+    {
+        SDL_ShowWindow(window);
+    }
+
+    void Window::setWindow(SDL_Window* window)
+    {
+        this->window = window;
     }
 
     void Window::setTitle(const char* t)

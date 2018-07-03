@@ -1,23 +1,22 @@
 #pragma once
-#include "Window.h"
-#include "SDL/h/SDL.h"
+
+#include "SDLFrame.h"
+
+using namespace SDL_Frame;
 
 int main()
 {
-    SDL::Window* win;
-    win = new SDL::Window("asdasd",200,300,300,400,SDL::Window::RESIZABLE);
+    SDL::init(SDL::INIT_EVERYTHING);
 
-    SDL::SDL sdl(SDL::SDL::INIT_EVERYTHING);
+    auto* window = new Window("Title", 30, 30,300,400, Window::RESIZABLE);
 
-    SDL_Window* window;
+    SDL_Window* winObj = window->get();
 
-    window = win->get();
+    window->show();
 
-    SDL_ShowWindow(window);
+    SDL_Delay(3000);
 
-    SDL_Delay(9000);
-
-    delete win, window;
+    delete window, winObj;
 
     return 0;
 }

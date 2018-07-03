@@ -8,7 +8,7 @@
 #include <iostream>
 #include "AbstractEntity.h"
 
-namespace SDL
+namespace SDL_Frame
 {
     class SDL : public AbstractEntity
     {
@@ -24,11 +24,7 @@ namespace SDL
         static const Uint32 INIT_EVERYTHING       = SDL_INIT_EVERYTHING;
         static const Uint32 INIT_NOPARACHUTE      = SDL_INIT_NOPARACHUTE;
 
-        SDL() = default;
-        explicit SDL(Uint32 InitFlag);
-        int init(Uint32 InitFlag);
-
-        //void clean();
+        static int init(Uint32 InitFlag);
     };
 }
 

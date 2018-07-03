@@ -4,13 +4,8 @@
 
 #include "h/SDL.h"
 
-namespace SDL
+namespace SDL_Frame
 {
-    SDL::SDL(Uint32 InitFlag = SDL::INIT_EVERYTHING)
-    {
-        SDL::init(InitFlag);
-    }
-
     int SDL::init(Uint32 InitFlag)
     {
         if (SDL_Init(InitFlag) != 0) {
